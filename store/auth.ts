@@ -40,7 +40,15 @@ export const useAuthStore = defineStore('auth', {
       this.randomCount += 1
     }
   },
+  /**
+   * State is persisted via Cookies interfacing useCookies composables
+   * persist property is not recognized by interface
+   */
   persist: {
-    storage: persistedState.localStorage
+    storage: persistedState.cookiesWithOptions({
+      sameSite: 'strict',
+      secure: true,
+      httpOnly: true
+    }),
   }
 })
