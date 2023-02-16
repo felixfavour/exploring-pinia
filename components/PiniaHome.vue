@@ -29,6 +29,7 @@ import { storeToRefs } from 'pinia';
 import { useAuthStore } from '~/store/auth'
 
 const usernameInput = ref('')
+
 const authStore = useAuthStore()
 const { username, randomCount, modUsername, doubleRandomCount } = storeToRefs(authStore)
 </script>

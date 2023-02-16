@@ -39,5 +39,8 @@ export const useAuthStore = defineStore('auth', {
     increaseRandomCount () {
       this.randomCount += 1
     }
+  },
+  persist: {
+    storage: persistedState.localStorage
   }
 })
